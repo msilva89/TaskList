@@ -29,7 +29,7 @@ public class Task {
     @Column(name = "dt_conclusao")
     private Date dtConclusao;
     @Column(name = "cd_status")
-    private int cdStatus;
+    private Integer cdStatus;
 
     public Long getIdTask() {
         return idTask;
@@ -87,11 +87,11 @@ public class Task {
         this.dtConclusao = dtConclusao;
     }
 
-    public int getCdStatus() {
+    public Integer getCdStatus() {
         return cdStatus;
     }
 
-    public void setCdStatus(int cdStatus) {
+    public void setCdStatus(Integer cdStatus) {
         this.cdStatus = cdStatus;
     }
 }
