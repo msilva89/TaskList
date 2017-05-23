@@ -24,7 +24,7 @@ public class TaskDao {
     }
 
     private EntityManager getEntityManager() {
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("crudHibernatePU");
+        EntityManagerFactory factory = Persistence.createEntityManagerFactory("TaskPU");
         if (entityManager == null) {
             entityManager = factory.createEntityManager();
         }
@@ -83,4 +83,5 @@ public class TaskDao {
             ex.printStackTrace();
         }
     }
+
 }

@@ -6,8 +6,8 @@
     	<script src="js/angular.js"></script>
     	<script src="js/app.js"></script>
   </head>
-  <body ng-app="TaskApp">
-	    <div ng-controller="TaskController as controller">
+  <body ng-app="TaskApp" ng-controller="TaskController as controller">
+	    <div >
             <h1>Task app</h1>
             <h5>{{controller.usuario}}</h5>
 
@@ -16,16 +16,17 @@
                 <input type="number" id="idTask" ng-model="controller.task.idTask" disabled><br>
 
                 <label for="dsTitulo">Titulo: </label>
-                <input type="text" id="dsTitulo" ng-model="controller.task.dsTiTulo"><br>
+                <input type="text" id="dsTitulo" ng-model="controller.task.dsTitulo"><br>
 
                 <label for="dsTask">Descrição: </label>
                 <textarea rows="4" id="dsTask" ng-model="controller.task.dsTask"></textarea><br>
 
                 <button type="button" data-ng-click="controller.salvar()">Salvar</button>
+                <button type="button" data-ng-click="controller.task = undefined">Cancelar</button>
             </div>
         </div>
         
-	        <div style="border: 1px solid black;" data-ng-show="!controller.task">
+	     <div  style="border: 1px solid black;" data-ng-show="!controller.task">
 	                <button type="button" ng-click="controller.novo()">Nova Task</button><br>
 	                <br>
 	                <table border="1">

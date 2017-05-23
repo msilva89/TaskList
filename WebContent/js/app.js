@@ -1,5 +1,5 @@
 angular.module("TaskApp", []).value('urlBase', 'http://localhost:8080/TaskList/rest/').controller("TaskController",
-		function($http, urlBase) {
+		function($scope,$http, urlBase) {
 			var self = this;
 			self.usuario = 'Murilo da Silva';
 
@@ -8,7 +8,6 @@ angular.module("TaskApp", []).value('urlBase', 'http://localhost:8080/TaskList/r
 
 			self.novo = function() {
 				self.task = {};
-				console.log(self.task);
 			};
 
 			self.salvar = function() {
@@ -24,8 +23,7 @@ angular.module("TaskApp", []).value('urlBase', 'http://localhost:8080/TaskList/r
 				}).then(function successCallback(response) {
 					self.atualizarTabela();
 				}, function errorCallback(response) {
-					console.log("teste");
-					console.log(response);
+					console.log(response.data);
 					self.ocorreuErro();
 				});
 			};
@@ -70,7 +68,6 @@ angular.module("TaskApp", []).value('urlBase', 'http://localhost:8080/TaskList/r
 					url : urlBase + 'task/'
 				}).then(function successCallback(response) {
 					self.tasks = response.data;
-					console.log(self.tasks);
 					self.task = undefined;
 				}, function errorCallback(response) {
 					self.ocorreuErro();
