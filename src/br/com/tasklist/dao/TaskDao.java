@@ -32,7 +32,7 @@ public class TaskDao {
         return entityManager;
     }
 
-    public Task getById(final int id) {
+    public Task getById(final Long id) {
         return entityManager.find(Task.class, id);
     }
 
@@ -75,7 +75,7 @@ public class TaskDao {
         }
     }
 
-    public void removeById(final int id) {
+    public void removeById(final Long id) {
         try {
             Task task = getById(id);
             remove(task);

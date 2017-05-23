@@ -1,4 +1,4 @@
-angular.module("TaskApp", []).value('urlBase', 'http://localhost:8080/TaskList/rest/').controller("TaskController",
+angular.module("TaskApp", []).value('urlBase', 'http://172.30.1.155:8080/TaskList/rest/').controller("TaskController",
 		function($scope,$http, urlBase) {
 			var self = this;
 			self.usuario = 'Murilo da Silva';

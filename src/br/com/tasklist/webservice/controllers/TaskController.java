@@ -28,28 +28,29 @@ public class TaskController {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("{id}/")
     public Task getTask(@PathParam("id") long id) {
-        return null;
+        return TaskDao.getInstance().getById(id);
     }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("/")
-    public Response create(Task chamado) {
-
+    public Response create(Task task) {
+        TaskDao.getInstance().persist(task);
         return Response.status(Response.Status.OK).build();
     }
 
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("/")
-    public Response update(Task chamado) {
+    public Response update(Task task) {
+        TaskDao.getInstance().merge(task);
         return Response.status(Response.Status.OK).build();
     }
 
     @DELETE
     @Path("{id}/")
     public Response delete(@PathParam("id") long id) {
-
+        TaskDao.getInstance().removeById(id);
         return Response.status(Response.Status.OK).build();
     }
 
