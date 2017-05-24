@@ -38,7 +38,7 @@ public class TaskDao {
 
     @SuppressWarnings("unchecked")
     public List<Task> findAll() {
-        return entityManager.createQuery("FROM " + Task.class.getName()).getResultList();
+        return entityManager.createQuery("FROM " + Task.class.getName() + " ORDER BY idTask").getResultList();
     }
 
     public void persist(Task task) {

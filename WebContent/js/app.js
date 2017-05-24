@@ -4,8 +4,15 @@ angular.module("TaskApp", []).value('urlBase', 'http://localhost:8080/TaskList/r
 			self.usuario = 'Murilo da Silva';
 
 			self.tasks = [];
-			self.task = undefined;
-
+			self.task = undefined;				
+		    self.status= [
+		         {'id' : '', 'description' : 'Selecione..'},         
+		         {'id' : 1, 'description' : 'Pendente'},
+		         {'id' : 2, 'description' : 'Fechado'},
+		       ];
+		    
+		    
+			
 			self.novo = function() {
 				self.task = {};
 			};
@@ -30,6 +37,7 @@ angular.module("TaskApp", []).value('urlBase', 'http://localhost:8080/TaskList/r
 
 			self.alterar = function(task) {
 				self.task = task;
+				console.log(self.task.cdStatus);
 			};
 
 			self.deletar = function(task) {

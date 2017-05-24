@@ -1,5 +1,6 @@
 package br.com.tasklist.entity;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -94,4 +95,19 @@ public class Task {
     public void setCdStatus(Integer cdStatus) {
         this.cdStatus = cdStatus;
     }
+
+    public String dtCriacaoString() {
+        return dtString(this.dtCriacao);
+    }
+
+    public String dtConclusaoString() {
+        return dtString(this.dtConclusao);
+    }
+
+    public String dtString(Date data) {
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        String dataFormatada = formato.format(data);
+        return dataFormatada;
+    }
+
 }
