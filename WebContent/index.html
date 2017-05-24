@@ -40,12 +40,16 @@
 				<label for="dtCriacao">Data criação:</label>
    					<input class="form-control" type="date" id="dtCriacao" name="input" 
    					       ng-model="controller.task.dtCriacao"
-      					   placeholder="yyyy-MM-dd"  required />
+      					   placeholder="yyyy-MM-dd"  
+      					   value="{{controller.task.dtCriacao | date:'yyyy-MM-dd'}}"
+      					   required />
       			</br>
       			<label for="dtConclusao">Data conclusão:</label>
    					<input class="form-control" type="date" id="dtConclusao" name="input" 
    					       ng-model="controller.task.dtConclusao"
-      					   placeholder="yyyy-MM-dd"  required />
+      					   placeholder="yyyy-MM-dd"  
+      					   value="{{controller.task.dtConclusao | date:'yyyy-MM-dd'}}"
+      					   required />
       			</br>
                 <button class="btn btn-primary" type="button" data-ng-click="controller.salvar()" ng-disabled="!(controller.task.dsTask && controller.task.dsTitulo)" >Salvar</button>
                 <button class="btn btn-danger" type="button" data-ng-click="controller.task = undefined">Cancelar</button>
